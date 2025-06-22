@@ -1,0 +1,231 @@
+.menuContainer {
+    position: fixed;
+    margin: 0;
+    padding-top: 12px;
+    padding-left: 0;
+    padding-right: 0%;
+    width: 100%;
+    max-width: 360px;
+    height: 100vh;
+    background-color: white;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-100%);
+    z-index: 1000;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    border: 1px solid rgb(228, 228, 228);
+    box-shadow: 16px 0px 52px 0px #0E185033;
+}
+
+.menuContainer[open] {
+    transform: none;
+    /* Slide in from the left */
+}
+
+.menuContainer::backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    z-index: 999;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(270deg, #F8F8F8 16.84%, rgba(248, 248, 248, 0.0001) 100%);
+    display: none;
+    z-index: 999;
+}
+
+.backdrop.active {
+    display: block;
+}
+
+.menuContainer__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.menuContainer__body .items:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.menuContainer__footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 20px;
+    width: 100%;
+}
+
+.items {
+  text-align: justify;
+  padding: 10px;
+  font-family: 'TT Lakes', sans-serif;
+  font-size: 16px;
+}
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(270deg, #F8F8F8 16.84%, rgba(248, 248, 248, 0.0001) 100%);
+    display: none;
+    z-index: 999;
+}
+
+/* Show the wrapper when dialog is open */
+.backdrop.active {
+    display: block;
+}
+
+.smallContainer {
+    width: 222px;
+    transform: translateX(5%);
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    position: relative;
+    top: 2%;
+}
+
+.logo {
+    width: 97px;
+    height: 51px;
+}
+
+.menuContainer__menuHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: start;
+    gap: 50px;
+}
+
+.headerIcons:hover,
+.logo:hover {
+    background-color: #F8F8F8;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.leftIcons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+
+.bodyAndFooter {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 40px;
+}
+
+.first-part {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    transform: translateX(-5%);
+}
+
+.contactIcons:hover {
+    background-color: #F8F8F8;
+    border-radius: 5px;
+    border: #41F6D7 1px solid;
+    cursor: pointer;
+    padding: 3px;
+    height: 32px;
+}
+
+.email {
+    text-align: center;
+    font-family: 'TT Lakes', sans-serif;
+    transform: translateX(-20.5%);
+}
+
+.email:hover {
+    color: #7E7E82;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.phone {
+    text-align: center;
+    font-family: 'TT Lakes', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    transform: translateX(-13%);
+    text-decoration: none;
+}
+
+.phone a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.phone:hover {
+    color: #7E7E82;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.second-part {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 1px;
+    width: 60%;
+}
+
+.language {
+    font-family: 'TT Lakes', Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    transform: translateX(5%);
+    margin: 0;
+    padding: 10px;
+
+}
+
+.language:hover {
+    color: #7E7E82;
+    background-color: #F8F8F8;
+    border-radius: 5px;
+    border: #41F6D7 1px solid;
+    cursor: pointer;
+}
+
+.second-part .language:first-child {
+    color: #7E7E82;
+}
+#btn1, #btn2{
+    padding: 0;
+    text-align: start;
+    font-size: 16px;
+    font-family: 'TT Lakes', Arial, sans-serif;
+}

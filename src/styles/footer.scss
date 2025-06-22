@@ -1,0 +1,28 @@
+Footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 24px;
+  color: #7E7E82;
+  position: relative;
+  bottom: 0;
+  margin-bottom: 20px;
+  border-top: solid 1px #D9FFF5;
+  width: 100%;
+  padding-top: 10px;
+
+}
+
+Footer label {
+  text-align: center;
+  font-family: TT Lakes;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0px;
+}
+
+Footer :last-child {
+  width: 260px;
+}

@@ -1,0 +1,232 @@
+@media (min-width: 1120px) {
+    body {
+        background-color: #F8F8F8;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: row;
+        gap: 0;
+    }
+
+    .menu-section {
+        width: 306px;
+        min-width: 306px;
+        background-color: white;
+        height: 100vh;
+        position: fixed;
+    }
+
+    .content-section {
+        flex: 1;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        margin-left: 306px;
+        /* Width of the menu */
+    }
+
+    .container__header_768,
+    .container__mainBodyHeader {
+        display: none;
+    }
+
+    .container__header_1120 {
+        display: flex;
+        justify-content: space-between;
+        color: #1B1C21;
+        align-items: center;
+        height: 88px;
+        background: #ffffff;
+        background-color: #F8F8F8;
+        width: 100%;
+        position: relative;
+        top: 12px;
+        min-width: fit-content;
+    }
+
+    .mainBody {
+        width: 100%;
+        overflow-x: hidden;
+
+    }
+
+    .container__header__leftIcons {
+        background-color: #F8F8F8;
+        display: flex;
+        justify-content: space-around;
+        gap: 30px;
+    }
+
+    .container__header__rightIcons {
+        background-color: #F8F8F8;
+    }
+
+    .divs {
+        font-size: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        font-family: 'TT Lakes', sans-serif;
+
+    }
+
+    .pannel {
+        overflow: visible;
+        flex-wrap: wrap;
+        justify-content: start;
+    }
+
+    .info-block {
+        max-width: fit-content;
+    }
+
+    .pannel-item {
+        letter-spacing: 0.2px;
+        font-size: 16px;
+
+    }
+
+    .pannel-item:hover {
+        background-color: #1B1C21;
+    }
+
+    .mainImg {
+        border-radius: 5px;
+    }
+
+    .lable1120 {
+        display: inline;
+    }
+
+    .menuContainer {
+        z-index: 2000;
+        pointer-events: auto;
+        box-shadow: none;
+        border: none ! important;
+    }
+
+    #closeMenu {
+        display: none;
+    }
+
+    #sideMenu {
+        max-width: 277px;
+    }
+
+    .menuContainer__body {
+        gap: 20px;
+    }
+
+    .menuContainer::backdrop {
+        background: none;
+        pointer-events: none;
+        /* Allows clicks to pass through */
+    }
+
+    .backdrop.active {
+        pointer-events: none;
+        /* Allows clicks to pass through */
+        background: none;
+        z-index: 1000;
+        /* Lower than menu */
+    }
+
+    /* ******************************************** swiper ******************************************** */
+    .swiper-content {
+        width: 100%;
+    }
+
+    .content320 {
+        display: none;
+    }
+
+    #myH1 {
+
+        left: 32px;
+    }
+
+    .topLine {
+        width: 1120px;
+    }
+
+    .f_footer {
+
+        left: 32px;
+    }
+
+    .f_body {
+        gap: 16px;
+
+    }
+
+    .f_body--images {
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 32px;
+    }
+
+    .f_body--images2 {
+        grid-template-columns: repeat(4, 1fr) ! important;
+        column-gap: 32px;
+        display: none;
+    }
+
+    .img1120 {
+        display: block;
+    }
+
+    // .content-section {
+    //     margin-left: 320px; // Width of the menu + some padding
+    // }
+
+    .menu-section {
+        width: 277px;
+        background-color: white;
+
+    }
+
+    .menuContainer {
+        box-shadow: none;
+        height: 100%;
+    }
+
+    #sideMenu {
+        position: static;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+
+    Footer {
+        width: 80%;
+    }
+
+
+    .feedbackContainer {
+        position: absolute;
+        /* Change from absolute to fixed */
+        top: 0;
+        left: 82%;
+        /* Position at the right edge of the screen */
+        width: 440px;
+        height: 100vh;
+        /* Full height of the viewport */
+        margin: 0;
+        transform: translateX(-320px);
+        /* Reset any transforms */
+        box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
+        /* Optional: add shadow for better visibility */
+        z-index: 1000;
+        /* Ensure it's above other content */
+    }
+
+}
+
+@media (min-width: 1240px) {
+    .feedbackContainer {
+        right: -96%;
+    }
+}

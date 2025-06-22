@@ -1,0 +1,154 @@
+.swiper {
+    width: 96%;
+    height: 100%;
+    position: relative;
+    left: 32px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    padding: 0;
+
+}
+
+.swiper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    /* Adjust as needed */
+    height: 100%;
+    pointer-events: none;
+    /* Allows clicks to pass through */
+    background: linear-gradient(270deg, #F8F8F8 16.84%, rgba(248, 248, 248, 0.0001) 100%);
+
+    z-index: 10;
+}
+
+.swiper-pagination-bullet {
+
+    width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 12px));
+    height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 12px));
+    display: inline-block;
+    border-radius: var(--swiper-pagination-bullet-border-radius, 50%);
+    background: var(--swiper-pagination-bullet-inactive-color, #e20000);
+}
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 8.5px);
+}
+
+.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+    bottom: var(--swiper-pagination-bottom, 8px);
+    top: var(--swiper-pagination-top, auto);
+    width: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8%;
+    width: 240px;
+    image-rendering: auto;
+    shape-rendering: geometricPrecision;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+
+
+
+.swiper-pagination {
+    position: relative;
+    top: 4px;
+}
+
+.swiper-pagination-bullet {
+    background-color: #B5B6BC;
+}
+
+
+.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+    top: 4px;
+}
+
+
+.swiper-content,
+.f_footer {
+    display: none;
+}
+
+.content320 {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 26px;
+    background-color: #F8F8F8;
+    min-height: 244px;
+    width: 100%;
+}
+
+.f_header320 {
+    height: 80px;
+    border-top: 1px solid #D9FFF5;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background: linear-gradient(90deg, #F8F8F8 0%, #FFFFFF 98.61%);
+
+
+}
+
+.swiper-wrapper {
+    width: 400px;
+    gap: 20px;
+}
+
+#myH1_320 {
+    font-family: TT Lakes;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    text-transform: uppercase;
+
+
+    color: #7E7E82;
+    font-family: 'TT Lakes', sans-serif;
+    position: relative;
+    margin: 0;
+    width: 60%;
+    height: 48px;
+    left: 10px;
+}
+
+
+
+
+
+.f_body--images img,
+.f_body--images2 img {
+    height: auto;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    object-fit: contain;
+}
