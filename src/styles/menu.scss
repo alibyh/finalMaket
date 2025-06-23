@@ -20,8 +20,7 @@
 }
 
 .menuContainer[open] {
-    transform: none;
-    /* Slide in from the left */
+    transform: translateX(0);
 }
 
 .menuContainer::backdrop {
@@ -76,16 +75,6 @@
   padding: 10px;
   font-family: 'TT Lakes', sans-serif;
   font-size: 16px;
-}
-.backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(270deg, #F8F8F8 16.84%, rgba(248, 248, 248, 0.0001) 100%);
-    display: none;
-    z-index: 999;
 }
 
 /* Show the wrapper when dialog is open */

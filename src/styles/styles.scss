@@ -7,7 +7,9 @@ body {
     background-color: $myBackground;
     position: relative;
 }
-
+// .myFeedabckDialog{
+//   display: none;
+// }
 .menu-section {
     position: fixed;
     top: 0;
@@ -46,6 +48,7 @@ body {
     gap: 25px;
     background-color: $myBackground;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 .container__header--line {
     width: 2px;
@@ -175,7 +178,9 @@ body {
   position: relative;
   left: 32px;
 }
-
+#secondMainContentItems2{
+  display: none;
+}
 .additional-info-label {
   color: black;
   font-family: 'TT Lakes', sans-serif;
@@ -195,4 +200,35 @@ body {
 .lable768,
 .linebreak768 {
   display: none;
+}
+
+
+
+// u*****************************************************testing************************************************************
+
+/* Side Menu Dialog */
+.myFeedabckDialog {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: fit-content;
+  margin-right: 0;
+  margin-top: 0;
+  padding: 0;
+  padding-top: 50px;
+  border: none;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  transform: translateX(100%);
+  transition: transform 0.3s ease-out;
+}
+
+.myFeedabckDialog[open] {
+  transform: translateX(0);
+}
+
+/* Backdrop */
+.myFeedabckDialog::backdrop {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(2px);
 }

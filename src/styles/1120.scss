@@ -23,8 +23,7 @@
         min-height: 100vh;
         display: flex;
         flex-direction: column;
-        margin-left: 306px;
-        /* Width of the menu */
+        margin-left: 306px; /* Width of the menu */
     }
 
     .container__header_768,
@@ -89,9 +88,9 @@
 
     }
 
-    .pannel-item:hover {
-        background-color: #1B1C21;
-    }
+    // .pannel-item:hover {
+    //     background-color: #1B1C21;
+    // }
 
     .mainImg {
         border-radius: 5px;
@@ -158,19 +157,20 @@
     }
 
     .f_body {
+        width: 100%;
         gap: 16px;
 
     }
 
     .f_body--images {
         grid-template-columns: repeat(4, 1fr);
-        column-gap: 32px;
+        max-width: none;
     }
 
     .f_body--images2 {
         grid-template-columns: repeat(4, 1fr) ! important;
-        column-gap: 32px;
         display: none;
+        max-width: none;
     }
 
     .img1120 {
@@ -199,34 +199,11 @@
         padding: 0;
         border: none;
     }
-
     Footer {
         width: 80%;
     }
-
-
-    .feedbackContainer {
-        position: absolute;
-        /* Change from absolute to fixed */
-        top: 0;
-        left: 82%;
-        /* Position at the right edge of the screen */
-        width: 440px;
-        height: 100vh;
-        /* Full height of the viewport */
-        margin: 0;
-        transform: translateX(-320px);
-        /* Reset any transforms */
-        box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
-        /* Optional: add shadow for better visibility */
-        z-index: 1000;
-        /* Ensure it's above other content */
+    .secondMainContentItems1, .secondMainContentItems2{
+        max-width: none;
     }
 
-}
-
-@media (min-width: 1240px) {
-    .feedbackContainer {
-        right: -96%;
-    }
 }
