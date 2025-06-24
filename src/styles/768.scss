@@ -21,6 +21,7 @@ $lineColor: #D9FFF5;
         background: #ffffff;
         background-color: #FFF;
         border-bottom: solid 1px $lineColor;
+        gap: 15%;
     }
 
     .container__header__leftIcons {
@@ -195,5 +196,7 @@ $lineColor: #D9FFF5;
 
 
 
-
+.secondMainContentItems label:not(.arrow){
+    left: 32px;
+}
 }

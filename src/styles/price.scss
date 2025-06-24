@@ -69,8 +69,14 @@
 }
 
 /* Price Header */
+.price-section__mobile {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
 .price-header {
-    height: 80px;
+    height: 56px;
     border-top: 1px solid #D9FFF5;
     display: flex;
     justify-content: start;
@@ -89,7 +95,7 @@
     position: relative;
     margin: 0;
     width: 60%;
-    left: 10px;
+    left: 32px;
 }
 
 /* Service Card */
@@ -186,7 +192,7 @@
     .price-section__mobile {
         display: none;
     }
-    
+
     .price-section__desktop {
         display: flex;
         flex-direction: column;
@@ -211,13 +217,14 @@
         width: 97%;
         border-collapse: collapse;
     }
-    
+
     .price-table__row:first-child {
         background-color: #F8F8F8;
         border-bottom: none;
     }
-    
-    th, td {
+
+    th,
+    td {
         padding: 16px;
         white-space: nowrap;
         font-family: 'TT Lakes', sans-serif;
@@ -227,7 +234,7 @@
         letter-spacing: -0.2px;
         color: #1B1C21;
     }
-    
+
     th {
         text-align: left;
         font-family: 'TT Lakes', sans-serif;
@@ -243,15 +250,16 @@
         display: table-row;
         width: 100%;
     }
-    
+
     tbody tr {
         border-bottom: 1px solid #EAEAEA;
     }
-    
+
     tbody tr:last-child {
         border-bottom: none;
     }
-    .price-footer__disclaimer{
+
+    .price-footer__disclaimer {
         width: 43%;
     }
 }

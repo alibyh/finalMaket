@@ -108,7 +108,7 @@
 }
 
 .f_header320 {
-    height: 80px;
+    height: 56px;
     border-top: 1px solid #D9FFF5;
     display: flex;
     justify-content: start;
@@ -124,21 +124,18 @@
 }
 
 #myH1_320 {
-    font-family: TT Lakes;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.2px;
     text-transform: uppercase;
-
-
     color: #7E7E82;
     font-family: 'TT Lakes', sans-serif;
     position: relative;
     margin: 0;
     width: 60%;
-    height: 48px;
-    left: 10px;
+    // height: 48px;
+    left: 32px;
 }
 
 
