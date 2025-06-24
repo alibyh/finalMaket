@@ -1,3 +1,5 @@
+@import 'fonts.css';
+
 $myBackground: #F8F8F8;
 
 body {
@@ -14,7 +16,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 100%;
     z-index: 1000;
 }
 
@@ -83,7 +85,14 @@ body {
     justify-content: start;
     align-items: center;
     gap: 15px;
+    height: 70px;
 
+}
+.container__mainBodyHeader h1{
+  margin: 0;
+  font-family: 'TT Lakes', sans-serif;
+  font-size: 28px;
+  
 }
 
 .container__mainBody--content {
@@ -180,6 +189,7 @@ body {
 }
 #secondMainContentItems2{
   display: none;
+  gap: 30px;
 }
 .additional-info-label {
   color: black;

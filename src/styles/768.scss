@@ -196,7 +196,12 @@ $lineColor: #D9FFF5;
 
 
 
-.secondMainContentItems label:not(.arrow){
+.secondMainContentItems label:not(.arrow), .secondMainContentItems2 label:not(.arrow){
     left: 32px;
+}
+.swiper-wrapper2{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 }

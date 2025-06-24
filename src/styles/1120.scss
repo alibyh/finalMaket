@@ -14,7 +14,7 @@
         width: 306px;
         min-width: 306px;
         background-color: white;
-        height: 100vh;
+        height: 100%;
         position: fixed;
     }
 
@@ -202,9 +202,6 @@
     }
     Footer {
         width: 80%;
-    }
-    .secondMainContentItems1, .secondMainContentItems2{
-        max-width: none;
     }
 
 }

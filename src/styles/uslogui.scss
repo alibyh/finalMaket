@@ -1,3 +1,5 @@
+@import 'fonts.css';
+
 .contentSec {
     width: 100%;
 }
@@ -8,7 +10,6 @@
     justify-content: start;
     gap: 26px;
     background-color: #F8F8F8;
-    min-height: 244px;
     width: 100%;
 }
 
@@ -100,7 +101,7 @@
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.2px;
-    
+
 
 }
 
@@ -179,17 +180,19 @@
     #toHide {
         display: none;
     }
-    .swiper-wrapper2{
+
+    .swiper-wrapper2 {
         position: relative;
-        left: 32px ;
+        left: 32px;
     }
 
 }
 
 @media (min-width: 1120px) {
-    .secondMainContentItems{
+    .secondMainContentItems {
         width: 240px;
     }
+
     .secondMainContentItems1 {
         grid-template-columns: repeat(4, 1fr);
         gap: 16px 32px;
@@ -200,8 +203,7 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 16px 32px;
-        margin-top: 24px;
-                max-width: fit-content;
+        max-width: fit-content;
 
     }
 
