@@ -147,29 +147,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 const dialogWrapper = document.getElementById('dialogWrapper');
                 const feedbackChatButton = document.getElementById('feedbackChatButton');
                 const feedbackButton = document.getElementById('feedbackButton');
-
-                if (feedbackButton) {
-                    feedbackButton.addEventListener('click', () => {
-                        myFeedabckDialog.showModal();
-                        fetch('feedback.html')
-                            .then(response => {
-                                if (!response.ok) throw new Error("Network response was not ok");
-                                return response.text();
-                            })
-                            .then(feedback_html => {
-                                feedbackContainer.innerHTML = feedback_html;
-                                const feedbckCacelbutton = document.getElementById('feedbckCacelbutton');
-                                if (feedbckCacelbutton) {
-                                    feedbckCacelbutton.addEventListener('click', () => {
-                                        myFeedabckDialog.close();
-                                    });
-                                }
-                            })
-                            .catch(error => {
-                                console.error("Error fetching feedback:", error);
-                            });
-                    });
-                }
                 if (feedbackChatButton) {
                     feedbackChatButton.addEventListener('click', () => {
                         myFeedabckDialog.showModal();
@@ -203,6 +180,30 @@ document.addEventListener("DOMContentLoaded", () => {
                             });
                     });
                 }
+
+                if (feedbackButton) {
+                    feedbackButton.addEventListener('click', () => {
+                        myFeedabckDialog.showModal();
+                        fetch('feedback.html')
+                            .then(response => {
+                                if (!response.ok) throw new Error("Network response was not ok");
+                                return response.text();
+                            })
+                            .then(feedback_html => {
+                                feedbackContainer.innerHTML = feedback_html;
+                                const feedbckCacelbutton = document.getElementById('feedbckCacelbutton');
+                                if (feedbckCacelbutton) {
+                                    feedbckCacelbutton.addEventListener('click', () => {
+                                        myFeedabckDialog.close();
+                                    });
+                                }
+                            })
+                            .catch(error => {
+                                console.error("Error fetching feedback:", error);
+                            });
+                    });
+                }
+                
 
                 if (!isLargeScreen) {
                     console.log('Setting up mobile menu');

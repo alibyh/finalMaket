@@ -115,11 +115,21 @@
     font-family: 'TT Lakes', sans-serif;
     font-weight: 700;
     color: white;
+    font-size: 12px;
 }
 .feedbackLabel-icon img {
     margin-left: 8px;
 }
 
+#inputMessage{
+    min-width: 90%;
+    min-height: 118px;
+}
+
+@media (min-width: 768px) {
+    #feedbckCacelbutton{}
+    
+}
 // @font-face {
 //     font-family: 'TT Lakes';
 //     src: url('./fonts/TTLakesCondensed-Regular.woff') format('woff');
