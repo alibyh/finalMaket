@@ -8,9 +8,53 @@ import './styles/feedback.scss';
 import './styles/768.scss';
 import './styles/1120.scss';
 import './styles/menu-transitions.scss'
-import * as $ from 'swiper'
+import Swiper from 'swiper'; // Import Swiper directly
+import { Pagination, Navigation } from 'swiper/modules'; // Import required modules
+
+// Register Swiper modules
+Swiper.use([Pagination, Navigation]);
 
 document.addEventListener("DOMContentLoaded", () => {
+    // Initialize all swipers
+    function initializeSwipers() {
+        // Initialize any swiper with class 'mySwiper'
+        const mySwipers = document.querySelectorAll('.mySwiper');
+        if (mySwipers.length > 0) {
+            mySwipers.forEach(element => {
+                if (!element.swiper) {
+                    new Swiper(element, {
+                        slidesPerView: 'auto',
+                        spaceBetween: 14,
+                        pagination: {
+                            el: element.querySelector('.swiper-pagination'),
+                            clickable: true,
+                        },
+                    });
+                }
+            });
+        }
+
+        // Initialize services slider
+        const servicesSliders = document.querySelectorAll('.services-slider');
+        if (servicesSliders.length > 0) {
+            servicesSliders.forEach(element => {
+                if (!element.swiper) {
+                    new Swiper(element, {
+                        slidesPerView: 'auto',
+                        spaceBetween: 14,
+                        pagination: {
+                            el: element.querySelector('.swiper-pagination'),
+                            clickable: true,
+                        },
+                    });
+                }
+            });
+        }
+    }
+
+    // Call the function to initialize all swipers
+    initializeSwipers();
+
     // Load initial menu for large screens
     const mediaQuery = window.matchMedia('(min-width: 1120px)');
     const myFeedabckDialog = document.getElementById('myFeedabckDialog');
@@ -20,11 +64,11 @@ document.addEventListener("DOMContentLoaded", () => {
         if (e.matches) {
             // Screen size increased to ≥1120px
             const menuContainer = document.getElementById('menuContainer');
-            
+
             // Check if menu already exists
             if (menuContainer && menuContainer.innerHTML.trim() !== '') {
                 const sideMenu = document.getElementById('sideMenu');
-                
+
                 if (sideMenu) {
                     // If menu exists but is closed, animate it open
                     if (!sideMenu.hasAttribute('open')) {
@@ -32,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         if (dialogWrapper) {
                             dialogWrapper.classList.add('active');
                         }
-                        
+
                         // Use setTimeout to ensure the transition is visible
                         setTimeout(() => {
                             sideMenu.setAttribute('open', '');
@@ -51,21 +95,21 @@ document.addEventListener("DOMContentLoaded", () => {
             // Screen size decreased to <1120px
             const menuContainer = document.getElementById('menuContainer');
             const sideMenu = document.getElementById('sideMenu');
-            
+
             if (sideMenu) {
                 // Start slide-out animation if menu is open
                 if (sideMenu.hasAttribute('open')) {
                     const dialogWrapper = document.getElementById('dialogWrapper');
-                    
+
                     // Remove open attribute to trigger animation
                     sideMenu.removeAttribute('open');
-                    
+
                     // Wait for animation to complete before clearing the menu
                     setTimeout(() => {
                         if (dialogWrapper) {
                             dialogWrapper.classList.remove('active');
                         }
-                        
+
                         // Clear the menu container after animation completes
                         if (menuContainer) {
                             menuContainer.innerHTML = '';
@@ -101,6 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 const sideMenu = document.getElementById('sideMenu');
                 const dialogWrapper = document.getElementById('dialogWrapper');
+                const feedbackChatButton = document.getElementById('feedbackChatButton');
                 const feedbackButton = document.getElementById('feedbackButton');
 
                 if (feedbackButton) {
@@ -125,10 +170,43 @@ document.addEventListener("DOMContentLoaded", () => {
                             });
                     });
                 }
+                if (feedbackChatButton) {
+                    feedbackChatButton.addEventListener('click', () => {
+                        myFeedabckDialog.showModal();
+                        fetch('feedback.html')
+                            .then(response => {
+                                if (!response.ok) throw new Error("Network response was not ok");
+                                return response.text();
+                            })
+                            .then(feedback_html => {
+                                feedbackContainer.innerHTML = feedback_html;
+                                const inputName = document.getElementById('inputName');
+                                const inputEmail = document.getElementById('inputEmail');
+                                const inputMessage = document.getElementById('inputMessage');
+                                const inputsToHide = [inputName, inputEmail, inputMessage];
+                                inputsToHide.forEach(hide => {
+                                    hide.style.display = 'none';
+                                });
+                                const feedbackH1 = document.getElementById('feedbackH1');
+                                if (feedbackH1) {
+                                    feedbackH1.textContent = 'Заказать звонок';
+                                }
+                                const feedbckCacelbutton = document.getElementById('feedbckCacelbutton');
+                                if (feedbckCacelbutton) {
+                                    feedbckCacelbutton.addEventListener('click', () => {
+                                        myFeedabckDialog.close();
+                                    });
+                                }
+                            })
+                            .catch(error => {
+                                console.error("Error fetching feedback:", error);
+                            });
+                    });
+                }
 
                 if (!isLargeScreen) {
                     console.log('Setting up mobile menu');
-                    
+
                     // Set up event listeners for mobile menu
                     const closeBtn = document.getElementById('closeMenu');
                     if (closeBtn) {
@@ -159,14 +237,14 @@ document.addEventListener("DOMContentLoaded", () => {
                         });
                     }
                 }
-                
+
                 // Handle menu opening animation for both mobile and desktop
                 if (autoOpen && sideMenu && dialogWrapper) {
                     console.log('Auto-opening menu with animation');
-                    
+
                     // First add the active class to show backdrop
                     dialogWrapper.classList.add('active');
-                    
+
                     // Use setTimeout to ensure the transition is visible
                     setTimeout(() => {
                         sideMenu.setAttribute('open', '');
@@ -205,27 +283,51 @@ document.addEventListener("DOMContentLoaded", () => {
             const swiperContainer = document.getElementById('container-for-swiper');
             if (swiperContainer) {
                 swiperContainer.innerHTML = html;
+
+                // Initialize Swiper after content is loaded
+                setTimeout(() => {
+                    try {
+                        const swiperElements = swiperContainer.querySelectorAll('.mySwiper');
+                        swiperElements.forEach(element => {
+                            if (!element.swiper) {
+                                new Swiper(element, {
+                                    slidesPerView: 'auto',
+                                    spaceBetween: 14,
+                                    pagination: {
+                                        el: element.querySelector('.swiper-pagination'),
+                                        clickable: true,
+                                    },
+                                });
+                            }
+                        });
+                    } catch (error) {
+                        console.error('Error initializing Swiper:', error);
+                    }
+                }, 100);
+
+                // Your existing code for click handlers
                 const images = document.getElementById("images2");
                 const addition2 = document.getElementById("addition");
                 const click = document.getElementById("click_footer");
-                const mediaQuery = window.matchMedia('(min-width: 1120px)');
-                click.addEventListener("click", () => {
-                    console.log(mediaQuery.matches);
-                    if (addition2.textContent === "Показать все") {
-                        images.style.display = "grid";
-                        if (mediaQuery.matches) {
-                            images.style.gridTemplateColumns = "repeat(4, 1fr)";
+                if (click && addition2 && images) {
+                    click.addEventListener("click", () => {
+                        console.log(mediaQuery.matches);
+                        if (addition2.textContent === "Показать все") {
+                            images.style.display = "grid";
+                            if (mediaQuery.matches) {
+                                images.style.gridTemplateColumns = "repeat(4, 1fr)";
+                            }
+                            else {
+                                images.style.gridTemplateColumns = "repeat(3, 1fr)";
+                            }
+                            addition2.textContent = "Скрыть";
                         }
                         else {
-                            images.style.gridTemplateColumns = "repeat(3, 1fr)";
+                            images.style.display = "none";
+                            addition2.textContent = "Показать все";
                         }
-                        addition2.textContent = "Скрыть";
-                    }
-                    else {
-                        images.style.display = "none";
-                        addition2.textContent = "Показать все";
-                    }
-                });
+                    });
+                }
             }
         })
         .catch(error => {
@@ -239,6 +341,30 @@ document.addEventListener("DOMContentLoaded", () => {
             const usloguiContainer = document.getElementById('usloguiContent');
             if (usloguiContainer) {
                 usloguiContainer.innerHTML = html;
+
+                // Initialize Swiper after content is loaded
+                setTimeout(() => {
+                    try {
+                        const swiperElements = usloguiContainer.querySelectorAll('.mySwiper');
+                        swiperElements.forEach(element => {
+                            if (!element.swiper) {
+                                new Swiper(element, {
+                                    slidesPerView: 'auto',
+                                    a11y: { clicked: true },
+                                    spaceBetween: 14,
+                                    pagination: {
+                                        el: element.querySelector('.swiper-pagination'),
+                                        clickable: true,
+                                    },
+                                });
+                            }
+                        });
+                    } catch (error) {
+                        console.error('Error initializing uslogui Swiper:', error);
+                    }
+                }, 100);
+
+                // Existing click handler code
                 const secondMainContent = document.getElementById("secondMainContentItems2");
                 const addition = document.getElementById("addition2");
                 const click = document.getElementById("click_footer2");
@@ -271,10 +397,31 @@ document.addEventListener("DOMContentLoaded", () => {
             const priceContainer = document.getElementById('priceContainer');
             if (priceContainer) {
                 priceContainer.innerHTML = html;
+
+                // Initialize Swiper for services-slider after content is loaded
+                setTimeout(() => {
+                    try {
+                        const servicesSliders = priceContainer.querySelectorAll('.services-slider');
+                        servicesSliders.forEach(element => {
+                            if (!element.swiper) {
+                                new Swiper(element, {
+                                    slidesPerView: 'auto',
+                                    spaceBetween: 14,
+                                    pagination: {
+                                        el: element.querySelector('.swiper-pagination'),
+                                        clickable: true,
+                                    },
+                                });
+                            }
+                        });
+                    } catch (error) {
+                        console.error('Error initializing services-slider Swiper:', error);
+                    }
+                }, 100);
             }
         })
         .catch(error => {
-            console.error('Error loading uslogui content:', error);
+            console.error('Error loading price content:', error);
         });
 
     fetch('footer.html')
@@ -286,6 +433,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         })
         .catch(error => {
-            console.error('Error loading uslogui content:', error);
+            console.error('Error loading footer content:', error);
         });
 });

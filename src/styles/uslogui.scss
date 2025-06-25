@@ -11,6 +11,15 @@
     gap: 26px;
     background-color: #F8F8F8;
     width: 100%;
+    position: relative;
+    padding-bottom: 30px; /* Add space for pagination */
+}
+
+/* Add these styles to ensure slides are properly styled */
+.content320 .swiper-slide {
+    width: auto !important; /* Allow slides to size based on content */
+    height: auto !important;
+    margin-right: 16px !important;
 }
 
 .swiper-slide2 {
@@ -23,6 +32,9 @@
     border-radius: 8%;
     image-rendering: auto;
     shape-rendering: geometricPrecision;
+    width: auto !important; /* Allow slides to size based on content */
+    height: auto !important;
+    margin-right: 16px !important;
 }
 
 .swiper-slide2 img {
@@ -32,6 +44,9 @@
     object-fit: contain;
 }
 
+.content320 .swiper {
+    overflow: visible !important; /* Allow pagination to be visible outside swiper container */
+}
 
 .second_f_header320 {
     height: 56px;
@@ -95,13 +110,11 @@
     position: relative;
     left: -22px;
 
-
     font-family: 'TT Lakes', sans-serif;
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.2px;
-
 
 }
 
@@ -238,7 +251,6 @@
         font-size: 20px;
     }
 
-
     .secondMainContentItems--1128 label:not(.arrow) {
         font-size: 16px;
         font-weight: 400;
@@ -261,4 +273,65 @@
     .ssecondMainContentItems--1128 :last-child {
         background-color: #000000;
     }
+}
+
+/* Make sure pagination is visible and properly styled */
+.content320 .swiper-pagination {
+    position: absolute !important;
+    bottom: -25px !important;
+    left: -24 !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    z-index: 10 !important;
+}
+
+.content320 .swiper-pagination-bullet {
+    width: 12px !important;
+    height: 12px !important;
+    display: inline-block !important;
+    border-radius: 50% !important;
+    background: #DDDDDD !important;
+    opacity: 1 !important;
+    margin: 0 8.5px !important;
+}
+
+.content320 .swiper-pagination-bullet-active {
+    background: #B5B6BC !important;
+    opacity: 1 !important;
+}
+
+/* Pagination styles for uslogui swiper */
+.usloguiContent .content320 {
+  position: relative;
+  padding-bottom: 30px; /* Add space for pagination */
+}
+
+.usloguiContent .content320 .swiper {
+  overflow: visible !important; /* Allow pagination to be visible outside swiper container */
+}
+
+.usloguiContent .content320 .swiper-pagination {
+  position: absolute !important;
+  bottom: -25px !important; /* Position below the slides */
+  left: -24px !important;
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  z-index: 10 !important;
+}
+
+.usloguiContent .content320 .swiper-pagination-bullet {
+  width: 12px !important;
+  height: 12px !important;
+  display: inline-block !important;
+  border-radius: 50% !important;
+  background: #DDDDDD !important;
+  opacity: 1 !important;
+  margin: 0 8.5px !important;
+}
+
+.usloguiContent .content320 .swiper-pagination-bullet-active {
+  background: #B5B6BC !important;
+  opacity: 1 !important;
 }

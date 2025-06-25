@@ -9,7 +9,7 @@
     justify-content: center;
     gap: 16px;
     padding: 0;
-
+    padding-bottom: 30px; /* Add padding to make room for pagination */
 }
 
 .swiper::after {
@@ -18,38 +18,45 @@
     top: 0;
     right: 0;
     width: 45px;
-    /* Adjust as needed */
     height: 100%;
     pointer-events: none;
-    /* Allows clicks to pass through */
     background: linear-gradient(270deg, #F8F8F8 16.84%, rgba(248, 248, 248, 0.0001) 100%);
-
     z-index: 10;
 }
 
+/* Fix pagination bullet styling */
 .swiper-pagination-bullet {
-
-    width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 12px));
-    height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 12px));
-    display: inline-block;
-    border-radius: var(--swiper-pagination-bullet-border-radius, 50%);
-    background: var(--swiper-pagination-bullet-inactive-color, #e20000);
+    width: 12px !important;
+    height: 12px !important;
+    display: inline-block !important;
+    border-radius: 50% !important;
+    background: #DDDDDD !important; /* Set bullet color */
+    opacity: 1 !important;
+    margin: 0 8.5px !important;
 }
 
-.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-bullet-active {
+    background: #DDDDDD !important; /* Make active bullet darker */
+    opacity: 1 !important;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
 .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
-    margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 8.5px);
+    margin: 0 8.5px;
 }
 
-.swiper-horizontal>.swiper-pagination-bullets,
+/* Fix pagination container positioning */
+.swiper-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal,
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
-    bottom: var(--swiper-pagination-bottom, 8px);
-    top: var(--swiper-pagination-top, auto);
+    bottom: -20px;
+    left: -24px;
     width: 100%;
+    position: absolute;
 }
 
+/* Slide styling */
 .swiper-slide {
     text-align: center;
     font-size: 18px;
@@ -70,28 +77,44 @@
     object-fit: contain;
 }
 
+/* Wrapper styling */
+.swiper-wrapper {
+    width: 400px;
+    gap: 20px;
+}
 
-
-
-
+/* Ensure pagination is visible */
 .swiper-pagination {
-    position: relative;
-    top: 4px;
+    position: relative !important;
+    bottom: 0 !important;
+    left: -24px !important;
+    width: 100% !important;
+    margin-top: 16px !important;
+    text-align: center !important;
+    z-index: 10 !important;
 }
 
 .swiper-pagination-bullet {
-    background-color: #B5B6BC;
+    width: 12px !important;
+    height: 12px !important;
+    display: inline-block !important;
+    border-radius: 50% !important;
+    background: #DDDDDD !important;
+    opacity: 1 !important;
+    margin: 0 8.5px !important;
 }
 
-
-.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal,
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
-    top: 4px;
+    bottom: 0px !important; /* Change from top: 4px to bottom: 0px */
+    left: 0;
+    width: 100%;
+    position: absolute;
 }
 
-
+/* Content styling */
 .swiper-content,
 .f_footer {
     display: none;
@@ -104,6 +127,8 @@
     gap: 26px;
     background-color: #F8F8F8;
     width: 100%;
+    position: relative;
+    padding-bottom: 20px; /* Add space at bottom */
 }
 
 .f_header320 {
@@ -113,13 +138,6 @@
     justify-content: start;
     align-items: center;
     background: linear-gradient(90deg, #F8F8F8 0%, #FFFFFF 98.61%);
-
-
-}
-
-.swiper-wrapper {
-    width: 400px;
-    gap: 20px;
 }
 
 #myH1_320 {
@@ -133,13 +151,8 @@
     position: relative;
     margin: 0;
     width: 60%;
-    // height: 48px;
     left: 32px;
 }
-
-
-
-
 
 .f_body--images img,
 .f_body--images2 img {

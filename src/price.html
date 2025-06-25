@@ -130,7 +130,7 @@
                 </div>
             </div>
 
-            <div class="services-slider__pagination swiper-pagination"></div>
+            <div class="swiper-pagination"></div>
         </div>
     </div>
     <div class="price-section__desktop">
@@ -226,13 +226,14 @@
 </div>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-    var swiper = new Swiper(".services-slider", {
-        slidesPerView: 'auto',
-        a11y: { clicked: true },
-        spaceBetween: 14,
-        pagination: {
-            el: ".services-slider__pagination",
-            clickable: true,
-        },
+    document.addEventListener('DOMContentLoaded', function() {
+        var swiper = new Swiper(".services-slider", {
+            slidesPerView: 'auto',
+            spaceBetween: 14,
+            pagination: {
+                el: ".swiper-pagination",  // Make sure this matches the class in your HTML
+                clickable: true,
+            },
+        });
     });
 </script>
