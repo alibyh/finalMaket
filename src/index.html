@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="./assets/sponge.jpg" type="image/icon">
+  <link rel="icon" href="./assets/icons/mainImg.svg" type="image/icon">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <title>Document</title>
 </head>
@@ -106,57 +106,35 @@
   </div>
   <dialog id="myFeedabckDialog" class="myFeedabckDialog">
     <div id="feedbackContainer" class="feedbackContainer">
-
+    </div>
+  </dialog>
+  <dialog id="myFeedabckDialog2" class="myFeedabckDialog">
+    <div id="feedbackContainer2" class="feedbackContainer">
     </div>
   </dialog>
 
   <!-- Make sure this is included before your main script -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Wait for Swiper to be fully loaded
-    if (typeof Swiper !== 'undefined') {
-      initializeSwipers();
-    } else {
-      // If Swiper isn't loaded yet, wait a bit and try again
-      setTimeout(function() {
-        if (typeof Swiper !== 'undefined') {
-          initializeSwipers();
-        } else {
-          console.error('Swiper library not loaded properly');
-        }
-      }, 500);
-    }
-    
-    function initializeSwipers() {
-      const swiperElements = document.querySelectorAll('.mySwiper');
-      if (swiperElements.length > 0) {
-        swiperElements.forEach(element => {
-          if (!element.swiper) {
-            try {
-              new Swiper(element, {
-                slidesPerView: 'auto',
-                spaceBetween: 14,
-                pagination: {
-                  el: element.querySelector('.swiper-pagination'),
-                  clickable: true,
-                },
-              });
-            } catch (error) {
-              console.error('Error initializing Swiper:', error);
-            }
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Wait for Swiper to be fully loaded
+      if (typeof Swiper !== 'undefined') {
+        initializeSwipers();
+      } else {
+        // If Swiper isn't loaded yet, wait a bit and try again
+        setTimeout(function () {
+          if (typeof Swiper !== 'undefined') {
+            initializeSwipers();
+          } else {
+            console.error('Swiper library not loaded properly');
           }
-        });
+        }, 500);
       }
-    }
 
-    // Function to initialize Swiper for uslogui content
-    function initializeUsloguiSwiper() {
-      const usloguiContent = document.getElementById('usloguiContent');
-      if (usloguiContent) {
-        const usloguiSwipers = usloguiContent.querySelectorAll('.mySwiper');
-        if (usloguiSwipers.length > 0) {
-          usloguiSwipers.forEach(element => {
+      function initializeSwipers() {
+        const swiperElements = document.querySelectorAll('.mySwiper');
+        if (swiperElements.length > 0) {
+          swiperElements.forEach(element => {
             if (!element.swiper) {
               try {
                 new Swiper(element, {
@@ -166,37 +144,62 @@
                     el: element.querySelector('.swiper-pagination'),
                     clickable: true,
                   },
-                  on: {
-                    init: function() {
-                      console.log('Uslogui Swiper initialized with', this.slides.length, 'slides');
-                    }
-                  }
                 });
               } catch (error) {
-                console.error('Error initializing uslogui Swiper:', error);
+                console.error('Error initializing Swiper:', error);
               }
             }
           });
         }
       }
-    }
 
-    // Load uslogui content and initialize its Swiper
-    fetch('uslogui.html')
-      .then(response => response.text())
-      .then(html => {
-        const usloguiContainer = document.getElementById('usloguiContent');
-        if (usloguiContainer) {
-          usloguiContainer.innerHTML = html;
-          // Wait a bit for the DOM to update
-          setTimeout(initializeUsloguiSwiper, 100);
+      // Function to initialize Swiper for uslogui content
+      function initializeUsloguiSwiper() {
+        const usloguiContent = document.getElementById('usloguiContent');
+        if (usloguiContent) {
+          const usloguiSwipers = usloguiContent.querySelectorAll('.mySwiper');
+          if (usloguiSwipers.length > 0) {
+            usloguiSwipers.forEach(element => {
+              if (!element.swiper) {
+                try {
+                  new Swiper(element, {
+                    slidesPerView: 'auto',
+                    spaceBetween: 14,
+                    pagination: {
+                      el: element.querySelector('.swiper-pagination'),
+                      clickable: true,
+                    },
+                    on: {
+                      init: function () {
+                        console.log('Uslogui Swiper initialized with', this.slides.length, 'slides');
+                      }
+                    }
+                  });
+                } catch (error) {
+                  console.error('Error initializing uslogui Swiper:', error);
+                }
+              }
+            });
+          }
         }
-      })
-      .catch(error => {
-        console.error('Error loading uslogui content:', error);
-      });
-  });
-</script>
+      }
+
+      // Load uslogui content and initialize its Swiper
+      fetch('uslogui.html')
+        .then(response => response.text())
+        .then(html => {
+          const usloguiContainer = document.getElementById('usloguiContent');
+          if (usloguiContainer) {
+            usloguiContainer.innerHTML = html;
+            // Wait a bit for the DOM to update
+            setTimeout(initializeUsloguiSwiper, 100);
+          }
+        })
+        .catch(error => {
+          console.error('Error loading uslogui content:', error);
+        });
+    });
+  </script>
 </body>
 
 </html>

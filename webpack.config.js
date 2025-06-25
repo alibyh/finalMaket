@@ -28,6 +28,7 @@ module.exports = {
                 { from: 'price.html', to: 'price.html' },
                 { from: 'footer.html', to: 'footer.html' },
                 { from: 'feedback.html', to: 'feedback.html' },
+                { from: 'feedback2.html', to: 'feedback2.html' },
 
             ],
         }),

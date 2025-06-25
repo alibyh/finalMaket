@@ -205,7 +205,7 @@
     .price-section__desktop {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: start;
     }
 
     .price-header {
@@ -223,8 +223,10 @@
         height: 100%;
         background-color: #FFFFFF;
         border-radius: 6px;
-        width: 97%;
+        width: 90%;
         border-collapse: collapse;
+        position: relative;
+        left: -17px;
     }
 
     .price-table__row:first-child {
@@ -261,7 +263,30 @@
     }
 
     tbody tr {
-        border-bottom: 1px solid #EAEAEA;
+        border-bottom: none; /* Remove the default border */
+        position: relative; /* For the pseudo-element positioning */
+    }
+
+    tbody tr:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 1%; /* Start at 5% from left */
+        width: 90%; /* Make border 90% width */
+        height: 1px;
+        background-color: #EAEAEA;
+    }
+
+    table td:last-child {
+        width: 1%; /* Minimal width */
+        white-space: nowrap; /* Prevent wrapping */
+        padding-right: 24px; /* Add some padding on the right */
+    }
+
+    table .service-card__order-btn {
+        white-space: nowrap;
+        width: auto; /* Let it size to content */
+        min-width: 119px; /* Minimum width */
     }
 
     tbody tr:last-child {
@@ -277,14 +302,13 @@
 .price-footer {
     position: relative;
     bottom: 0;
-    left: 0;
+    left: 32px;
     width: 80%;
     background-color: #F8F8F8;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: start;
-    padding: 0 16px;
     gap: 8px;
 }
 

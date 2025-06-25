@@ -58,7 +58,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Load initial menu for large screens
     const mediaQuery = window.matchMedia('(min-width: 1120px)');
     const myFeedabckDialog = document.getElementById('myFeedabckDialog');
+    const myFeedabckDialog2 = document.getElementById('myFeedabckDialog2');
     const feedbackContainer = document.getElementById('feedbackContainer');
+    const feedbackContainer2 = document.getElementById('feedbackContainer2');
 
     const handleMenuForLargeScreens = (e) => {
         if (e.matches) {
@@ -149,29 +151,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 const feedbackButton = document.getElementById('feedbackButton');
                 if (feedbackChatButton) {
                     feedbackChatButton.addEventListener('click', () => {
-                        myFeedabckDialog.showModal();
-                        fetch('feedback.html')
+                        myFeedabckDialog2.showModal();
+                        fetch('feedback2.html')
                             .then(response => {
                                 if (!response.ok) throw new Error("Network response was not ok");
                                 return response.text();
                             })
                             .then(feedback_html => {
-                                feedbackContainer.innerHTML = feedback_html;
-                                const inputName = document.getElementById('inputName');
-                                const inputEmail = document.getElementById('inputEmail');
-                                const inputMessage = document.getElementById('inputMessage');
-                                const inputsToHide = [inputName, inputEmail, inputMessage];
-                                inputsToHide.forEach(hide => {
-                                    hide.style.display = 'none';
-                                });
-                                const feedbackH1 = document.getElementById('feedbackH1');
-                                if (feedbackH1) {
-                                    feedbackH1.textContent = 'Заказать звонок';
-                                }
-                                const feedbckCacelbutton = document.getElementById('feedbckCacelbutton');
-                                if (feedbckCacelbutton) {
-                                    feedbckCacelbutton.addEventListener('click', () => {
-                                        myFeedabckDialog.close();
+                                feedbackContainer2.innerHTML = feedback_html;
+                                const feedbckCacelbutton2 = document.getElementById('feedbckCacelbutton2');
+                                if (feedbckCacelbutton2) {
+                                    feedbckCacelbutton2.addEventListener('click', () => {
+                                        myFeedabckDialog2.close();
+                                        feedbckCacelbutton2.style.display = 'none';
                                     });
                                 }
                             })
@@ -195,6 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 if (feedbckCacelbutton) {
                                     feedbckCacelbutton.addEventListener('click', () => {
                                         myFeedabckDialog.close();
+                                        feedbckCacelbutton.style.display = 'none';
                                     });
                                 }
                             })

@@ -98,7 +98,6 @@ $lineColor: #D9FFF5;
         grid-template-columns: repeat(3, 1fr);
         row-gap: 16px;
         column-gap: 24px;
-        max-width: min-content;
     }
 
     .f_body--images2 {
@@ -107,7 +106,6 @@ $lineColor: #D9FFF5;
         row-gap: 16px;
         column-gap: 24px;
         display: none;
-        max-width: min-content;
     }
 
     .f_header {
@@ -142,13 +140,14 @@ $lineColor: #D9FFF5;
         cursor: pointer;
         user-select: none;
     }
-    .swiper-wrapper {
-    display: flex;
-    flex-direction: column;
-    width: 400px;
-    gap: 20px;
 
-  }
+    .swiper-wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        gap: 20px;
+
+    }
 
     .expand {
         width: 24px ! important;
@@ -177,31 +176,57 @@ $lineColor: #D9FFF5;
         display: none;
     }
 
-  Footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    gap: 20px;
-    color: #7E7E82;
-    position: relative;
-    bottom: 0;
-    margin-bottom: 20px;
-    border-top: solid 1px #D9FFF5;
-    width: 100%;
-    padding-top: 10px;
+    Footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        gap: 20px;
+        color: #7E7E82;
+        position: relative;
+        bottom: 0;
+        margin-bottom: 20px;
+        border-top: solid 1px #D9FFF5;
+        width: 100%;
+        padding-top: 10px;
 
-  }
-
-
+    }
 
 
-.secondMainContentItems label:not(.arrow), .secondMainContentItems2 label:not(.arrow){
-    left: 32px;
-}
-.swiper-wrapper2{
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-}
+
+
+    .secondMainContentItems label:not(.arrow),
+    .secondMainContentItems2 label:not(.arrow) {
+        left: 32px;
+    }
+
+    .swiper-wrapper2 {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    #myFeedabckDialog, #myFeedabckDialog2 {
+        display: inline-table;
+        padding-top: 0;
+    }
+
+    #feedbckCacelbutton, #feedbckCacelbutton2 {
+        left: -212px;
+        top: 59px;
+    }
+
+    /* Table styles for tablet */
+    table {
+        width: 95%;
+    }
+    
+    tbody tr:not(:last-child)::after {
+        left: 2.5%;
+        width: 95%;
+    }
+    
+    table td:last-child {
+        padding-right: 16px;
+    }
 }

@@ -68,6 +68,17 @@
     top: -30px;
 
 }
+.feedbackContainer2 {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    height: 200%;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+    top: -30px;
+
+}
 .feedbackFooter{
     width: 100%;
     display: flex;
@@ -125,21 +136,3 @@
     min-width: 90%;
     min-height: 118px;
 }
-
-@media (min-width: 768px) {
-    #feedbckCacelbutton{}
-    
-}
-// @font-face {
-//     font-family: 'TT Lakes';
-//     src: url('./fonts/TTLakesCondensed-Regular.woff') format('woff');
-//     font-weight: 400;
-//     font-style: normal;
-// }
-
-// @font-face {
-//     font-family: 'TT Lakes';
-//     src: url('./fonts/TTLakes-Bold.woff') format('woff');
-//     font-weight: 700;
-//     font-style: normal;
-// }

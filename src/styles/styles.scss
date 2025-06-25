@@ -51,6 +51,7 @@ body {
     background-color: $myBackground;
     overflow-x: hidden;
     overflow-y: hidden;
+            overscroll-behavior-x: none;
 }
 .container__header--line {
     width: 2px;
