@@ -11,9 +11,12 @@ $lineColor: #D9FFF5;
     // body {
     //     // background-color: #000000;
     // }
+    .mainContent {
+        gap: 15px;
+    }
 
     .container__header_768 {
-        width: 100%;
+        width: 96%;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -22,6 +25,18 @@ $lineColor: #D9FFF5;
         background-color: #FFF;
         border-bottom: solid 1px $lineColor;
         gap: 15%;
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .container__mainBodyHeader {
+        gap: 18px;
+    }
+
+    .container__mainBody--content,
+    .additional-info,
+    .info-block-item {
+        left: 24px;
     }
 
     .container__header__leftIcons {
@@ -45,11 +60,25 @@ $lineColor: #D9FFF5;
 
     .talking {
         gap: 10px;
+        width: 85%;
+        position: relative;
+        top: 5px;
     }
 
     .info-block {
         display: flex;
         flex-direction: row;
+    }
+
+    .info-block-item {
+        width: 100%;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .info-block-item label {
+        font-size: 14px;
+        line-height: 20px;
     }
 
     .lable768 {
@@ -87,7 +116,7 @@ $lineColor: #D9FFF5;
         line-height: 24px;
         letter-spacing: -0.2px;
         position: relative;
-        left: 32px;
+        left: 24px;
         text-transform: uppercase;
         margin: 0;
     }
@@ -124,7 +153,7 @@ $lineColor: #D9FFF5;
         background-color: #F8F8F8;
         gap: 16px;
         position: relative;
-        left: 32px;
+        left: 24px;
         width: 90%;
 
     }
@@ -136,7 +165,7 @@ $lineColor: #D9FFF5;
         width: 133px;
         height: 24px;
         position: relative;
-        left: 32px;
+        left: 24px;
         cursor: pointer;
         user-select: none;
     }
@@ -197,7 +226,7 @@ $lineColor: #D9FFF5;
 
     .secondMainContentItems label:not(.arrow),
     .secondMainContentItems2 label:not(.arrow) {
-        left: 32px;
+        left: 24px;
     }
 
     .swiper-wrapper2 {
@@ -206,13 +235,20 @@ $lineColor: #D9FFF5;
         gap: 24px;
     }
 
-    #myFeedabckDialog, #myFeedabckDialog2 {
+    #myFeedbackDialog,
+    #myFeedbackDialog2 {
         display: inline-table;
-        padding-top: 0;
+        padding-top: 50px;
+    }
+    .feedbackContainer{
+        top: -75px;
+        width: 440px;
+        border-left: solid 0.5px #41F6D7;
     }
 
-    #feedbckCacelbutton, #feedbckCacelbutton2 {
-        left: -212px;
+    #feedbckCacelbutton,
+    #feedbckCacelbutton2 {
+        left: -292px;
         top: 59px;
     }
 
@@ -220,12 +256,12 @@ $lineColor: #D9FFF5;
     table {
         width: 95%;
     }
-    
+
     tbody tr:not(:last-child)::after {
         left: 2.5%;
         width: 95%;
     }
-    
+
     table td:last-child {
         padding-right: 16px;
     }

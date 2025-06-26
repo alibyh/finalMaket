@@ -57,8 +57,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Load initial menu for large screens
     const mediaQuery = window.matchMedia('(min-width: 1120px)');
-    const myFeedabckDialog = document.getElementById('myFeedabckDialog');
-    const myFeedabckDialog2 = document.getElementById('myFeedabckDialog2');
+    const myFeedbackDialog = document.getElementById('myFeedbackDialog');
+    const myFeedbackDialog2 = document.getElementById('myFeedbackDialog2');
     const feedbackContainer = document.getElementById('feedbackContainer');
     const feedbackContainer2 = document.getElementById('feedbackContainer2');
 
@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const feedbackButton = document.getElementById('feedbackButton');
                 if (feedbackChatButton) {
                     feedbackChatButton.addEventListener('click', () => {
-                        myFeedabckDialog2.showModal();
+                        myFeedbackDialog2.showModal();
                         fetch('feedback2.html')
                             .then(response => {
                                 if (!response.ok) throw new Error("Network response was not ok");
@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 const feedbckCacelbutton2 = document.getElementById('feedbckCacelbutton2');
                                 if (feedbckCacelbutton2) {
                                     feedbckCacelbutton2.addEventListener('click', () => {
-                                        myFeedabckDialog2.close();
+                                        myFeedbackDialog2.close();
                                         feedbckCacelbutton2.style.display = 'none';
                                     });
                                 }
@@ -175,7 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 if (feedbackButton) {
                     feedbackButton.addEventListener('click', () => {
-                        myFeedabckDialog.showModal();
+                        myFeedbackDialog.showModal();
                         fetch('feedback.html')
                             .then(response => {
                                 if (!response.ok) throw new Error("Network response was not ok");
@@ -186,7 +186,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 const feedbckCacelbutton = document.getElementById('feedbckCacelbutton');
                                 if (feedbckCacelbutton) {
                                     feedbckCacelbutton.addEventListener('click', () => {
-                                        myFeedabckDialog.close();
+                                        myFeedbackDialog.close();
                                         feedbckCacelbutton.style.display = 'none';
                                     });
                                 }

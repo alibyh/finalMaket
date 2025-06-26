@@ -6,12 +6,12 @@
     padding-right: 0%;
     width: 100%;
     max-width: 360px;
-    height: 100vh;
+    height: 100%;
     background-color: white;
     transition: transform 0.3s ease-in-out;
     transform: translateX(-100%);
     z-index: 1000;
-    gap: 20px;
+    gap: 30px;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -65,9 +65,10 @@
 .menuContainer__footer {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     gap: 20px;
     width: 100%;
+    padding-bottom: 15px;
 }
 
 .items {
@@ -89,7 +90,7 @@
     flex-direction: row;
     justify-content: start;
     position: relative;
-    top: 2%;
+    height: 100%;
 }
 
 .logo {
@@ -102,7 +103,7 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: start;
-    gap: 50px;
+    gap: 100px;
 }
 
 .headerIcons:hover,
@@ -123,9 +124,10 @@
 .bodyAndFooter {
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: space-between;
     align-items: start;
-    gap: 40px;
+    gap: 32px;
+    height: 100%;
 }
 
 .first-part {

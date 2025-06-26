@@ -104,7 +104,7 @@
     position: relative;
     margin: 0;
     width: 60%;
-    left: 32px;
+    left: 24px;
 }
 
 /* Service Card */
@@ -216,7 +216,7 @@
     .price-header__title {
         height: auto;
         position: relative;
-        left: 32px;
+        left: 24px;
     }
 
     table {
@@ -226,7 +226,7 @@
         width: 90%;
         border-collapse: collapse;
         position: relative;
-        left: -17px;
+        left: 24px;
     }
 
     .price-table__row:first-child {
@@ -310,6 +310,7 @@
     justify-content: space-between;
     align-items: start;
     gap: 8px;
+        padding-bottom: 20px;
 }
 
 .price-footer__disclaimer {

@@ -10,13 +10,13 @@ Footer {
   margin-bottom: 20px;
   border-top: solid 1px #D9FFF5;
   width: 100%;
-  padding-top: 10px;
+  padding-top: 30px;
 
 }
 
 Footer label {
   text-align: center;
-  font-family: TT Lakes;
+  font-family: "TT Lakes";
   font-weight: 500;
   font-size: 14px;
   line-height: 16px;
@@ -25,4 +25,15 @@ Footer label {
 
 Footer :last-child {
   width: 260px;
+}
+
+.myfooterLabel {
+  color: #7E7E82;
+  text-align: start;
+  justify-items: start;
+}
+
+.myfooterLabel:last-child {
+  text-align: end;
+  width: 280px;
 }
