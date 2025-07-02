@@ -14,7 +14,7 @@
     width: 96%;
     height: 100%;
     position: relative;
-    left: 3%;
+    left: 8px;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -59,9 +59,9 @@
 
 .services-slider__wrapper {
     width: 400px;
-    gap: 20px;
+    gap: 16px;
     position: relative;
-    left: 12px;
+    left: 0px;
 }
 
 .services-slider__slide {
@@ -72,7 +72,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 8%;
-    width: 240px;
+    width: 260px;
     image-rendering: auto;
     shape-rendering: geometricPrecision;
 }
@@ -80,7 +80,7 @@
 /* Price Header */
 .price-section__mobile {
     display: flex;
-    gap: 20px;
+    gap: 16px;
     flex-direction: column;
 }
 
@@ -113,7 +113,6 @@
     height: 200px;
     background-color: white;
     border-radius: 6px;
-    border: 1px solid #EAEAEA;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -142,7 +141,7 @@
     display: flex;
     flex-direction: row;
     align-items: start;
-    gap: 30px;
+    gap: 28px;
 }
 
 .service-card__timing-info {
@@ -155,6 +154,7 @@
     display: flex;
     flex-direction: column;
     align-items: start;
+    min-width: 81px;
 }
 
 .service-card__timing-info div {
@@ -166,7 +166,7 @@
     align-items: center;
     justify-content: space-between;
     max-width: 119px;
-    height: 32px;
+    height: 28px;
     background-color: #FF3E79;
     border: solid 2px #FF3E79;
     border-radius: 16px;
@@ -176,7 +176,9 @@
     cursor: pointer;
     word-spacing: 7px;
     padding: 0 12px;
-    gap: 12px;
+    gap: 15px;
+    position: relative;
+    top: 7px;
 }
 
 .service-card__order-btn:hover {
@@ -194,6 +196,8 @@
 
 .service-card__order-icon img {
     margin-left: 8px;
+    width: 12px;
+    height: 12px;
 }
 
 /* Desktop Styles */
@@ -329,5 +333,4 @@
     line-height: 24px;
     letter-spacing: -0.2px;
     color: #1B1C21;
-    width: 70%;
 }

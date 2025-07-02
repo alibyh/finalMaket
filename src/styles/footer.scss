@@ -7,10 +7,10 @@ Footer {
   color: #7E7E82;
   position: relative;
   bottom: 0;
-  margin-bottom: 20px;
+  padding-bottom: 20px;
   border-top: solid 1px #D9FFF5;
   width: 100%;
-  padding-top: 30px;
+  padding-top: 16px;
 
 }
 
@@ -29,11 +29,11 @@ Footer :last-child {
 
 .myfooterLabel {
   color: #7E7E82;
-  text-align: start;
+  text-align: center;
   justify-items: start;
 }
 
 .myfooterLabel:last-child {
-  text-align: end;
+  text-align: center;
   width: 280px;
 }

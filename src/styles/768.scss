@@ -84,6 +84,9 @@ $lineColor: #D9FFF5;
     .lable768 {
         display: inline;
     }
+    .mainImg{
+        border-radius: 6px;
+    }
 
 
     /* ******************************************** swiper ******************************************** */
@@ -124,17 +127,12 @@ $lineColor: #D9FFF5;
 
     .f_body--images {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, 224px);
         row-gap: 16px;
         column-gap: 24px;
     }
-
-    .f_body--images2 {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr) ! important;
-        row-gap: 16px;
-        column-gap: 24px;
-        display: none;
+    .f_body--images img, .f_body--images2 img{
+        width: 224px;
     }
 
     .f_header {
@@ -148,13 +146,15 @@ $lineColor: #D9FFF5;
 
     .f_body {
         display: flex;
-        justify-content: center;
+        justify-content: start;
         flex-direction: column;
         background-color: #F8F8F8;
         gap: 16px;
         position: relative;
         left: 24px;
         width: 90%;
+        height: 160px;
+        overflow: hidden;
 
     }
 

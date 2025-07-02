@@ -16,6 +16,18 @@ Swiper.use([Pagination, Navigation]);
 
 document.addEventListener("DOMContentLoaded", () => {
     // Initialize all swipers
+    const additionalInfo = document.querySelector('.additional-info');
+    const lable1120 = document.getElementById('lable1120');
+    const for76128 = document.getElementById('for76128');
+    const lable768 = document.getElementById('lable768');
+    if (additionalInfo) {
+        additionalInfo.addEventListener('click', () => {
+            lable1120.style.display = 'inline';
+            lable768.style.display = 'inline';
+            for76128.style.display = 'block';
+        });
+    };
+        
     function initializeSwipers() {
         // Initialize any swiper with class 'mySwiper'
         const mySwipers = document.querySelectorAll('.mySwiper');
@@ -277,7 +289,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const swiperContainer = document.getElementById('container-for-swiper');
             if (swiperContainer) {
                 swiperContainer.innerHTML = html;
-
+                const f_body = document.getElementById("f_body");
                 // Initialize Swiper after content is loaded
                 setTimeout(() => {
                     try {
@@ -291,7 +303,17 @@ document.addEventListener("DOMContentLoaded", () => {
                                         el: element.querySelector('.swiper-pagination'),
                                         clickable: true,
                                     },
+                                    on: {
+                                    init: function() {
+                                        // Remove margin from active slide on init
+                                        this.slides.forEach(slide => {
+                                            if (slide.classList.contains('swiper-slide-active')) {
+                                                slide.style.marginRight = '0';
+                                            }
+                                        });
+                                    },}
                                 });
+                                
                             }
                         });
                     } catch (error) {
@@ -301,24 +323,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 // Your existing code for click handlers
                 const images = document.getElementById("images2");
-                const addition2 = document.getElementById("addition");
+                const addition = document.getElementById("addition");
                 const click = document.getElementById("click_footer");
-                if (click && addition2 && images) {
+                
+                if (click) {
                     click.addEventListener("click", () => {
-                        console.log(mediaQuery.matches);
-                        if (addition2.textContent === "Показать все") {
-                            images.style.display = "grid";
-                            if (mediaQuery.matches) {
-                                images.style.gridTemplateColumns = "repeat(4, 1fr)";
-                            }
-                            else {
-                                images.style.gridTemplateColumns = "repeat(3, 1fr)";
-                            }
-                            addition2.textContent = "Скрыть";
+                        if (addition.textContent === "Показать все") {
+                            f_body.style.height = "auto";
+                            f_body.style.overflow = "auto";
+                            addition.textContent = "Скрыть";
                         }
                         else {
-                            images.style.display = "none";
-                            addition2.textContent = "Показать все";
+                            f_body.style.height = "160px";
+                            f_body.style.overflow = "hidden";
+                            addition.textContent = "Показать все";
                         }
                     });
                 }
@@ -359,22 +377,20 @@ document.addEventListener("DOMContentLoaded", () => {
                 }, 100);
 
                 // Existing click handler code
-                const secondMainContent = document.getElementById("secondMainContentItems2");
                 const addition = document.getElementById("addition2");
                 const click = document.getElementById("click_footer2");
+                const wrapper2 = document.getElementById("swiper-wrapper2");
 
-                if (click && addition && secondMainContent) {
+                if (click && addition && wrapper2) {
                     click.addEventListener("click", () => {
                         if (addition.textContent === "Показать все") {
-                            secondMainContent.style.display = "grid";
-                            if (mediaQuery.matches) {
-                                secondMainContent.style.gridTemplateColumns = "repeat(4, 1fr)";
-                            } else {
-                                secondMainContent.style.gridTemplateColumns = "repeat(3, 1fr)";
-                            }
+                            wrapper2.style.height="auto";
+                            wrapper2.style.overflow = "auto";
+                            wrapper2.style.overflowX="hidden";
                             addition.textContent = "Скрыть";
                         } else {
-                            secondMainContent.style.display = "none";
+                            wrapper2.style.height="172px";
+                            wrapper2.style.overflow = "hidden";
                             addition.textContent = "Показать все";
                         }
                     });
