@@ -1,8 +1,9 @@
 @import 'fonts.css';
+
 .price-section {
     display: flex;
     flex-direction: column;
-    gap:32px;
+    gap: 32px;
 }
 
 .price-section__desktop {
@@ -14,7 +15,7 @@
     width: 96%;
     height: 100%;
     position: relative;
-    left: 3%;
+    left: 8px;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -42,7 +43,7 @@
     border-radius: 50% !important;
     background: #DDDDDD !important;
     opacity: 1 !important;
-    margin: 0 8.5px !important;
+    margin: 0 0px !important;
 }
 
 .services-slider .swiper-pagination-bullet-active {
@@ -55,13 +56,17 @@
     top: 4px;
     width: 100%;
     height: 100%;
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    gap: 12px;
 }
 
 .services-slider__wrapper {
     width: 400px;
-    gap: 20px;
+    gap: 16px;
     position: relative;
-    left: 12px;
+    left: 0px;
 }
 
 .services-slider__slide {
@@ -71,8 +76,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 8%;
-    width: 240px;
+    border-radius: 7px;
+    width: 258.4px;
     image-rendering: auto;
     shape-rendering: geometricPrecision;
 }
@@ -80,7 +85,7 @@
 /* Price Header */
 .price-section__mobile {
     display: flex;
-    gap: 20px;
+    gap: 16px;
     flex-direction: column;
 }
 
@@ -107,13 +112,18 @@
     left: 24px;
 }
 
+.price-mini-title {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+}
+
 /* Service Card */
 .service-card {
     width: 260px;
     height: 200px;
     background-color: white;
     border-radius: 6px;
-    border: 1px solid #EAEAEA;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -133,6 +143,7 @@
     align-items: start;
 }
 
+
 .service-card__service div,
 .service-card__price div {
     color: #7E7E82;
@@ -142,7 +153,7 @@
     display: flex;
     flex-direction: row;
     align-items: start;
-    gap: 30px;
+    gap: 28px;
 }
 
 .service-card__timing-info {
@@ -155,6 +166,7 @@
     display: flex;
     flex-direction: column;
     align-items: start;
+    min-width: 81px;
 }
 
 .service-card__timing-info div {
@@ -166,7 +178,7 @@
     align-items: center;
     justify-content: space-between;
     max-width: 119px;
-    height: 32px;
+    height: 28px;
     background-color: #FF3E79;
     border: solid 2px #FF3E79;
     border-radius: 16px;
@@ -176,7 +188,9 @@
     cursor: pointer;
     word-spacing: 7px;
     padding: 0 12px;
-    gap: 12px;
+    gap: 3px;
+    position: relative;
+    top: 7px;
 }
 
 .service-card__order-btn:hover {
@@ -193,7 +207,9 @@
 }
 
 .service-card__order-icon img {
-    margin-left: 8px;
+    margin-left: 0px;
+    width: 12px;
+    height: 12px;
 }
 
 /* Desktop Styles */
@@ -223,7 +239,6 @@
         height: 100%;
         background-color: #FFFFFF;
         border-radius: 6px;
-        width: 90%;
         border-collapse: collapse;
         position: relative;
         left: 24px;
@@ -263,30 +278,39 @@
     }
 
     tbody tr {
-        border-bottom: none; /* Remove the default border */
-        position: relative; /* For the pseudo-element positioning */
+        border-bottom: none;
+        /* Remove the default border */
+        position: relative;
+        /* For the pseudo-element positioning */
     }
 
     tbody tr:not(:last-child)::after {
         content: "";
         position: absolute;
         bottom: 0;
-        left: 1%; /* Start at 5% from left */
-        width: 90%; /* Make border 90% width */
+        left: 1%;
+        /* Start at 5% from left */
+        width: 90%;
+        /* Make border 90% width */
         height: 1px;
         background-color: #EAEAEA;
     }
 
     table td:last-child {
-        width: 1%; /* Minimal width */
-        white-space: nowrap; /* Prevent wrapping */
-        padding-right: 24px; /* Add some padding on the right */
+        width: 1%;
+        /* Minimal width */
+        white-space: nowrap;
+        /* Prevent wrapping */
+        padding-right: 24px;
+        /* Add some padding on the right */
     }
 
     table .service-card__order-btn {
         white-space: nowrap;
-        width: auto; /* Let it size to content */
-        min-width: 119px; /* Minimum width */
+        width: auto;
+        /* Let it size to content */
+        min-width: 119px;
+        /* Minimum width */
     }
 
     tbody tr:last-child {
@@ -309,8 +333,8 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: start;
-    gap: 8px;
-        padding-bottom: 20px;
+    gap: 16px;
+    padding-bottom: 20px;
 }
 
 .price-footer__disclaimer {
@@ -329,5 +353,4 @@
     line-height: 24px;
     letter-spacing: -0.2px;
     color: #1B1C21;
-    width: 70%;
 }

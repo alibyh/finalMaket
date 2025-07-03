@@ -16,7 +16,7 @@ module.exports = {
     plugins: [
         new HTMLWebpackPlugin({
             title: 'Alibyh',
-            template: '/index.html',
+            template: 'index.html',
         }),
         new CleanWebpackPlugin(),
         new CopyPlugin({

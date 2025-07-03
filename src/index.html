@@ -77,24 +77,25 @@
                 отремонтировать
                 свой ноутбук Dell с официальной гарантией производителя.
               </label>
-              <lable class="76128">
-                <div class="lable768">
+              <lable id="for76128" class="for76128">
+                <div id="lable768" class="lable768">
                   Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера
                 </div>
-                <div class="lable1120">
+                <div id="lable1120" class="lable1120">
                   , что подтверждает большое количество постоянных клиентов. Мы гордимся тем, что к
                   нам обращаются по рекомендациям и, в свою очередь, советуют нас родным и близким.
                 </div>
               </lable>
             </label>
-            <div class="additional-info">
+            <div id="additional-info" class="additional-info">
               <img style="width: 30px;" src="assets/icons/expand.svg" />
-              <label class="additional-info-label"> Читать далее</label>
+              <label id="additional-info-label" class="additional-info-label"> Читать далее</label>
             </div>
           </div>
           <img class="mainImg" src="assets/icons/mainImg.svg" alt="">
         </div>
       </div>
+      
       <div id="container-for-swiper" class="container-for-swiper">
         <!-- Swiper content will be loaded here by JavaScript -->
       </div>
@@ -115,91 +116,6 @@
 
   <!-- Make sure this is included before your main script -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // Wait for Swiper to be fully loaded
-      if (typeof Swiper !== 'undefined') {
-        initializeSwipers();
-      } else {
-        // If Swiper isn't loaded yet, wait a bit and try again
-        setTimeout(function () {
-          if (typeof Swiper !== 'undefined') {
-            initializeSwipers();
-          } else {
-            console.error('Swiper library not loaded properly');
-          }
-        }, 500);
-      }
-
-      function initializeSwipers() {
-        const swiperElements = document.querySelectorAll('.mySwiper');
-        if (swiperElements.length > 0) {
-          swiperElements.forEach(element => {
-            if (!element.swiper) {
-              try {
-                new Swiper(element, {
-                  slidesPerView: 'auto',
-                  spaceBetween: 14,
-                  pagination: {
-                    el: element.querySelector('.swiper-pagination'),
-                    clickable: true,
-                  },
-                });
-              } catch (error) {
-                console.error('Error initializing Swiper:', error);
-              }
-            }
-          });
-        }
-      }
-
-      // Function to initialize Swiper for uslogui content
-      function initializeUsloguiSwiper() {
-        const usloguiContent = document.getElementById('usloguiContent');
-        if (usloguiContent) {
-          const usloguiSwipers = usloguiContent.querySelectorAll('.mySwiper');
-          if (usloguiSwipers.length > 0) {
-            usloguiSwipers.forEach(element => {
-              if (!element.swiper) {
-                try {
-                  new Swiper(element, {
-                    slidesPerView: 'auto',
-                    spaceBetween: 14,
-                    pagination: {
-                      el: element.querySelector('.swiper-pagination'),
-                      clickable: true,
-                    },
-                    on: {
-                      init: function () {
-                        console.log('Uslogui Swiper initialized with', this.slides.length, 'slides');
-                      }
-                    }
-                  });
-                } catch (error) {
-                  console.error('Error initializing uslogui Swiper:', error);
-                }
-              }
-            });
-          }
-        }
-      }
-
-      // Load uslogui content and initialize its Swiper
-      fetch('uslogui.html')
-        .then(response => response.text())
-        .then(html => {
-          const usloguiContainer = document.getElementById('usloguiContent');
-          if (usloguiContainer) {
-            usloguiContainer.innerHTML = html;
-            // Wait a bit for the DOM to update
-            setTimeout(initializeUsloguiSwiper, 100);
-          }
-        })
-        .catch(error => {
-          console.error('Error loading uslogui content:', error);
-        });
-    });
-  </script>
 </body>
 
 </html>
