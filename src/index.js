@@ -174,6 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const feedbackButton = document.getElementById('feedbackButton');
                 if (feedbackChatButton) {
                     feedbackChatButton.addEventListener('click', () => {
+                        myFeedbackDialog2.style.boxShadow = '16px -52px 52px -1px rgba(14, 24, 80, 0.2)';
                         myFeedbackDialog2.showModal();
                         fetch('feedback2.html')
                             .then(response => {
@@ -186,6 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 if (feedbckCacelbutton2) {
                                     feedbckCacelbutton2.addEventListener('click', () => {
                                         myFeedbackDialog2.close();
+                                        myFeedbackDialog.style.boxShadow = 'none';
                                         feedbckCacelbutton2.style.display = 'none';
                                     });
                                 }
@@ -198,6 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 if (feedbackButton) {
                     feedbackButton.addEventListener('click', () => {
+                        myFeedbackDialog.style.boxShadow = '16px -52px 52px -1px rgba(14, 24, 80, 0.2)';
                         myFeedbackDialog.showModal();
                         fetch('feedback.html')
                             .then(response => {
@@ -210,6 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 if (feedbckCacelbutton) {
                                     feedbckCacelbutton.addEventListener('click', () => {
                                         myFeedbackDialog.close();
+                                        myFeedbackDialog.style.boxShadow = 'none';
                                         feedbckCacelbutton.style.display = 'none';
                                     });
                                 }
