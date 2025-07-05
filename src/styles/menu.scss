@@ -1,7 +1,7 @@
 .menuContainer {
     position: fixed;
     margin: 0;
-    padding-top: 16px;
+    padding-top: 17px;
     padding-left: 0;
     padding-right: 0%;
     width: 100%;
@@ -11,7 +11,7 @@
     transition: transform 0.3s ease-in-out;
     transform: translateX(-100%);
     z-index: 1000;
-    gap: 21px;
+    gap: 22px;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -67,9 +67,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 20px;
+    gap: 8px;
     width: 100%;
-    padding-bottom: 30px;
+    padding-bottom: 100px;
 }
 
 .items {
@@ -102,9 +102,10 @@
 .menuContainer__menuHeader {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: start;
     gap: 100px;
+    padding: 0px 16px 0 16px;
 }
 
 .headerIcons:hover,
@@ -116,7 +117,6 @@
 
 .leftIcons {
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
     align-items: center;
     gap: 20px;
@@ -140,9 +140,7 @@
 
 .icons {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    transform: translateX(-8%);
+    gap: 16px;
 }
 
 .contactIcons:hover {
@@ -155,9 +153,8 @@
 }
 
 .email {
-    text-align: center;
+    text-align: start;
     font-family: 'TT Lakes', sans-serif;
-    transform: translateX(-19.5%);
 }
 
 .email:hover {
@@ -167,12 +164,13 @@
 }
 
 .phone {
-    text-align: center;
-    font-family: 'TT Lakes', sans-serif;
-    font-weight: bold;
-    font-size: 20px;
-    transform: translateX(-5%);
+    text-align: start;
+    font-family: "TT Lakes", sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 32px;
     text-decoration: none;
+    letter-spacing: -0.6px;
 }
 
 .phone a {
@@ -188,9 +186,8 @@
 
 .second-part {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    gap: 1px;
+    justify-content: space-between;
+    gap: 7px;
     width: 87px;
 }
 

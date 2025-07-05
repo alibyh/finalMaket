@@ -67,7 +67,7 @@ body {
     border-bottom-right-radius: 5px;
     position: relative;
     left: -12.5px;
-    top: 16px;
+    top: -3.5px;
 
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
@@ -261,6 +261,7 @@ body {
   border: none;
   transform: translateX(100%);
   transition: transform 0.3s ease-out;
+  max-width: none;
 }
 
 .myFeedbackDialog[open] {

@@ -188,28 +188,34 @@
     cursor: pointer;
     word-spacing: 7px;
     padding: 0 12px;
-    gap: 3px;
+    gap: 8px;
     position: relative;
     top: 7px;
-}
-
-.service-card__order-btn:hover {
-    color: black;
-    border: solid 2px #000000;
+    min-width: 115px;
+        padding: 0;
+        justify-content: center;
 }
 
 .service-card__order-text {
     position: relative;
-    left: 2%;
     font-family: 'TT Lakes', sans-serif;
     font-weight: 700;
     color: white;
+    font-size: 12px;
+    letter-spacing: -0.15px;
+    line-height: 24px;
 }
 
+.service-card__order-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .service-card__order-icon img {
-    margin-left: 0px;
-    width: 12px;
-    height: 12px;
+    width: 7px;
+    height: 9.64px;
 }
 
 /* Desktop Styles */
@@ -309,7 +315,9 @@
         white-space: nowrap;
         width: auto;
         /* Let it size to content */
-        min-width: 119px;
+        min-width: 115px;
+        padding: 0;
+        justify-content: center;
         /* Minimum width */
     }
 
